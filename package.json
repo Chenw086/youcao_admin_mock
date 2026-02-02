@@ -1,0 +1,95 @@
+{
+  "name": "mobile",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:test": "vite build --mode test",
+    "build": "vue-tsc --noEmit && vite build --mode release",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix --cache",
+    "lint:style": "stylelint \"**/*.{css,less,vue,html}\" --fix",
+    "format": "prettier --write --experimental-cli src/",
+    "lint:all": "run-s type-check lint lint:style format",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,less,html,vue}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dayjs": "^1.11.19",
+    "lodash": "^4.17.21",
+    "lucide-vue-next": "^0.561.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^3.0.4",
+    "pinia-plugin-persistedstate": "^4.7.1",
+    "qs": "^6.14.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "tdesign-icons-vue-next": "^0.4.1",
+    "tdesign-mobile-vue": "^1.11.1",
+    "vant": "^4.9.22",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "@tailwindcss/postcss": "4.1.18",
+    "@tdesign-vue-next/auto-import-resolver": "^0.1.4",
+    "@tsconfig/node24": "^24.0.3",
+    "@types/lodash": "^4.17.21",
+    "@types/node": "^24.10.1",
+    "@types/nprogress": "^0.2.3",
+    "@types/qs": "^6.14.0",
+    "@typescript-eslint/utils": "^8.49.0",
+    "@vant/auto-import-resolver": "^1.3.0",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vitejs/plugin-vue-jsx": "^5.1.2",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "@vue/tsconfig": "^0.8.1",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "~10.5.1",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "less": "^4.4.2",
+    "lint-staged": "^16.2.7",
+    "npm-run-all2": "^8.0.4",
+    "postcss": "^8.5.6",
+    "postcss-html": "^1.8.1",
+    "postcss-less": "^6.0.0",
+    "postcss-loader": "^8.2.0",
+    "postcss-pxtorem": "^6.1.0",
+    "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "stylelint": "^16.26.1",
+    "stylelint-config-recess-order": "^7.4.0",
+    "stylelint-config-recommended-vue": "^1.6.1",
+    "stylelint-config-standard-less": "^3.0.1",
+    "tailwindcss": "4.1.18",
+    "typescript": "~5.9.0",
+    "unplugin-auto-import": "^20.3.0",
+    "unplugin-vue-components": "^30.0.0",
+    "vite": "^7.2.4",
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vue-tsc": "^3.1.5"
+  }
+}

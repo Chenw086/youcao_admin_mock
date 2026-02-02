@@ -1,0 +1,8 @@
+# 1. 全量运行类型检查 (vue-tsc)
+# 注意：vue-tsc 必须全量检查才能确保类型正确，无法只检查暂存文件
+echo "Checking types..."
+npm run type-check
+
+# 2. 对暂存区文件运行 Lint 和 Format
+echo "Linting staged files..."
+pnpm lint-staged

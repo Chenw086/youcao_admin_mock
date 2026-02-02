@@ -1,0 +1,10 @@
+{
+  // 这里配置是: 编辑器推荐插件，默认会提示安装
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode"
+  ]
+}

@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #366ef4;
+  --color-accent: #5cd2f7;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #0ea5e9;
+  --color-background: #f7f9fb;
+  --color-surface: #fff;
+  --color-layer: #eef2f7;
+  --color-muted: #4b5563;
+  --spacing-4-5: 1.125rem;
+  --spacing-18: 4.5rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --font-heading: 2rem;
+  --font-subheading: 1.5rem;
+  --font-body: 1rem;
+  --font-sans: 'Poppins', 'Noto Sans SC', system-ui, sans-serif;
+  --shadow-glow: 0 18px 50px rgb(54 110 244 / 15%);
+  --image-hero-gradient: linear-gradient(135deg, #9ec5ff 0%, #5cd2f7 45%, #a7f3d0 100%);
+}
+
+/*
+  Tailwind v4 不需要 @config，配置直接在 CSS 中通过 @theme 定义。
+  这里直接定义了颜色、圆角、阴影等变量，Tailwind 会自动生成对应的 utility class。
+  例如：bg-primary, text-accent, shadow-glow, rounded-xl 等。
+*/
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    --app-glow: 0 18px 55px rgb(54 110 244 / 18%);
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(circle at 20% 20%, rgb(92 210 247 / 22%), transparent 55%),
+      radial-gradient(circle at 80% 0%, rgb(167 243 208 / 20%), transparent 50%);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #app {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding-bottom: constant(safe-area-inset-bottom); /* 兼容 iOS < 11.2 */
+    padding-bottom: env(safe-area-inset-bottom); /* 兼容 iOS >= 11.2 */
+  }
+}
+
+@layer components {
+  /* 手动添加一个固定 px 的类进行测试 */
+  .test-fixed-width {
+    width: 375px;
+    height: 100px;
+    background: red;
+  }
+
+  .glass-panel {
+    @apply rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-2xl;
+
+    box-shadow: var(--shadow-glow);
+  }
+
+  .elevated-button {
+    @apply rounded-xl font-semibold text-white shadow-lg transition-all duration-300;
+
+    background-image: linear-gradient(to right, #366ef4, #5cd2f7);
+    box-shadow:
+      0 10px 18px -4px rgb(54 110 244 / 25%),
+      0 6px 12px -6px rgb(0 0 0 / 8%);
+  }
+
+  .elevated-button:hover {
+    @apply -translate-y-0.5 shadow-xl;
+
+    box-shadow:
+      0 16px 28px -6px rgb(54 110 244 / 30%),
+      0 10px 18px -8px rgb(0 0 0 / 10%);
+  }
+}
