@@ -2,5 +2,7 @@
   "totalRevenue": 192606,
   "totalRefund": 51440,
   "totalOrders": 512,
-  "activeUsers": 873
+  "activeUsers": 873,
+  "withdraw": 1588.34,
+  "deduction": 1820
 }

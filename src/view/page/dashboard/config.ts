@@ -28,6 +28,7 @@ export const INCOME_LIST = [
     },
     type: 'card',
     role: ['admin'],
+    admin: 'deduction',
   },
   {
     title: '可提现金额',
@@ -37,7 +38,7 @@ export const INCOME_LIST = [
       cursor: 'pointer',
     },
     type: 'jump',
-    name: 'withdraw',
+    admin: 'withdraw',
   },
   {
     title: '用户总数',
